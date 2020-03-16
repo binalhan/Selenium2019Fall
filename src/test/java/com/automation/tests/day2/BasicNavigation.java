@@ -16,7 +16,6 @@ public class BasicNavigation {
 
         driver.get ("http://google.com");
 
-
     }
 
 
