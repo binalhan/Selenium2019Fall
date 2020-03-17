@@ -17,10 +17,23 @@ public class BasicNavigation {
         driver.get ("http://google.com");
         Thread.sleep(3000);//for demo, wait 3 seconds
 
-        driver.close();
         String title = driver.getTitle();//returns <title>Some title</title> text
+
+String expectedTitle = " Google";
+
+
+
         System.out.println("Title is..."+title);
-        driver.close();//to close browser
+
+
+        if(expectedTitle.equals(title)){
+            System.out.println("TEST PASSED");
+        }else {
+            System.out.println("TEST FAILED");
+        }
+
+
+        driver.close();
         //browser cannot close itself
     }
 
