@@ -37,6 +37,8 @@ String expectedTitle = " Google";
         }
 
 driver.navigate() .to(" http://amazon.com");
+        Thread.sleep(3000);//for demo, wait 3 seconds
+
         if(driver.getTitle().toLowerCase().contains("amazon")) {
             System.out.println("TEST PASSED");
         }else{
