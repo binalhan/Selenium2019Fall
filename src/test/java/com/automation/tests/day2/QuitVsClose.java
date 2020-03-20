@@ -14,9 +14,9 @@ public class QuitVsClose {
         WebDriver driver = new ChromeDriver();
         driver.get("http://practice.cybertek.com/open_nw_tab");
         Thread.sleep (5000);
-        driver.close();
+       // driver.close();
 
-
+driver.quit();
 
 
 
