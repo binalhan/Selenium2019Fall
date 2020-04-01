@@ -29,8 +29,10 @@ WebElement signUp= By.name(("wooden_spoon")).findElement(driver);
 
 signUp.submit();
         Thread.sleep(2000);
-
-driver.quit();
+String expected = "Thank you for signing up.Click the button to return to main manu"
+  WebElement message =driver.findElement(By.className("subheader"));
+String actual = message.getText();
+        driver.quit();
     }
 
 
