@@ -8,33 +8,41 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FindElementsPractice {
-    public static void main(String[] args)  throws  Exception{
+    public static void main(String[] args) throws Exception {
 
-    //WebDriverManager.chromedriver().setup();
-     //   WebDriver driver =  new ChromeDriver();
+        //WebDriverManager.chromedriver().setup();
+        //   WebDriver driver =  new ChromeDriver();
 
-WebDriver driver= DriverFactory.createDriver("chrome");
-driver.get("http://practice.cybertekschool.com/sign_up");
+        WebDriver driver = DriverFactory.createDriver("chrome");
+        driver.get("http://practice.cybertekschool.com/sign_up");
 
         WebElement fullName = driver.findElement(By.name("full_name"));
 
 
-       fullName.sendKeys(" Mister Twister");
-       Thread.sleep(2000);
- WebElement email = (WebElement) driver.findElements(By.name("email"));
- email.sendKeys("sdet@cybertek.com");
+        fullName.sendKeys(" Mister Twister");
         Thread.sleep(2000);
- email.sendKeys("binalhan@gmail.com");
-WebElement signUp= By.name(("wooden_spoon")).findElement(driver);
+        WebElement email = (WebElement) driver.findElements(By.name("email"));
+        email.sendKeys("sdet@cybertek.com");
+        Thread.sleep(2000);
+        email.sendKeys("binalhan@gmail.com");
+        WebElement signUp = By.name(("wooden_spoon")).findElement(driver);
 
-signUp.submit();
+        signUp.submit();
         Thread.sleep(2000);
-String expected = "Thank you for signing up.Click the button to return to main manu"
-  WebElement message =driver.findElement(By.className("subheader"));
-String actual = message.getText();
+        String expected = ("Thank you for signing up.Click the button to return to the home page");
+
+        WebElement message = driver.findElement(By.className("subheader"));
+        String actual = message.getText();
+
+        if (expected.equals(actual)) {
+            System.out.println("Test passed");
+        } else {
+            System.out.println("Test faild");
+
+        }
+
+
         driver.quit();
     }
-
-
 
 }
