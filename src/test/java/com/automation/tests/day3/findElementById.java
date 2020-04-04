@@ -29,6 +29,8 @@ if (expected.equals(actual)) {
 }
  WebElement logout = driver.findElement(By.linkText(" Logout"));
   logout.click();
+  String href = logout.getAttribute("href");
+
 Thread.sleep(2000);
 
 
