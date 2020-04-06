@@ -27,10 +27,10 @@ if (expected.equals(actual)) {
 }else{
     System.out.println("Test failed");
 }
- WebElement logout = driver.findElement(By.linkText(" Logout"));
+ WebElement logout = driver.findElement(By.partialLinkText("Logout"));
   logout.click();
   String href = logout.getAttribute("href");
-
+        System.out.println("href " );
 Thread.sleep(2000);
 
 
