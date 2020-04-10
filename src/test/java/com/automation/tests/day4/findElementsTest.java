@@ -18,7 +18,8 @@ Thread.sleep(3000);
 
         for(WebElement link: links) {
             System.out.println(link.getText());
-
+            System.out.println(link.getAttribute("href"));
+            System.out.println();
         }
         driver.quit();
     }
