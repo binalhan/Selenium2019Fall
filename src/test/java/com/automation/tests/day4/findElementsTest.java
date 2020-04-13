@@ -20,6 +20,9 @@ Thread.sleep(3000);
             System.out.println(link.getText());
             System.out.println(link.getAttribute("href"));
             System.out.println();
+            link.click();
+            Thread.sleep(2000);
+            driver.navigate().back();
         }
         driver.quit();
     }

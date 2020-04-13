@@ -7,10 +7,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
+        @org.jetbrains.annotations.NotNull
         public static WebDriver createDriver(String browserName){
 
   if (browserName.equalsIgnoreCase("chrome")){
-      return  new ChromeDriver();
+      ChromeDriver chromeDriver= new ChromeDriver();
+      return chromeDriver;
   }else{
       WebDriverManager.firefoxdriver().setup();
       return new FirefoxDriver();
