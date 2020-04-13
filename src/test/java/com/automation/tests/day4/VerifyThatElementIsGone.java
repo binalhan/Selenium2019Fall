@@ -22,6 +22,9 @@ Thread.sleep(2000);
      System.out.println("Test Pass");
  }else{
      System.out.println("test failed");
+
+
+     driver.quit();
  }
     }
 }
