@@ -40,6 +40,7 @@ public class RadioButtons {
                 System.out.println("Button is disabled.not clicked" + id);
             }
         }
+        System.out.println();
         driver.quit();
     }
 
