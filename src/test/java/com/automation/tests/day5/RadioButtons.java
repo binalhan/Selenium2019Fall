@@ -27,6 +27,10 @@ public class RadioButtons {
 
             String id = radioButton.getAttribute("id");
 
+            boolean isSelected = radioButton.isSelected();
+            System.out.println(id + "is selected? " + isSelected);
+
+
             if (radioButton.isEnabled()) {
                 radioButton.click();
                 System.out.println("click on : :" + id);
