@@ -8,5 +8,5 @@ public class BrowserUtils {
             Thread.sleep(1000*seconds);
     }catch ( InterruptedException e) {
             }
-            }
+        }
 }

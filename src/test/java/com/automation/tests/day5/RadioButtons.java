@@ -25,21 +25,21 @@ public class RadioButtons {
         List<WebElement> radioButtons = driver.findElements(By.tagName("input"));
         for (WebElement radioButton : radioButtons) {
 
-            String id; radioButton.getAttribute("id");
+            String id = radioButton.getAttribute("id");
 
-            if (radioButton.isEnabled())        {
-            radioButton.click();
-            System.out.println("click on" + radioButton.getAttribute("id"));
-            BrowserUtils.wait(1);
+            if (radioButton.isEnabled()) {
+                radioButton.click();
+                System.out.println("click on : :" + id);
+                BrowserUtils.wait(1);
 
-        }else{
-            System.out.println("Button is disabled.not clicked");
+            } else {
+                System.out.println("Button is disabled.not clicked" + id);
+            }
         }
-
         driver.quit();
     }
 
 
 
 }
-}
+
