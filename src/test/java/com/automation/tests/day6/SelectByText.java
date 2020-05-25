@@ -6,15 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
-
 import static com.automation.utilities.DriverFactory.createDriver;
+import java.util.List;
 
 public class SelectByText {
 
     public static void main(String[] args) throws Exception {
-        WebDriver driver = createDriver("chrome");
+        WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
         BrowserUtils.wait(3);
 
@@ -35,12 +33,27 @@ public class SelectByText {
 
         List<WebElement> months = selectMonth.getOptions();
         for (WebElement eachMonth: months){
-            String monthName= eachMonth.getText();
-            selectDay.selectByVisibleText(monthName);
+            java.lang.String monthName= eachMonth.getText();
+            selectMonth.selectByVisibleText(monthName);
+            BrowserUtils.wait(1);
+
+
         }
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(3);
+        Select stateSelect = new Select (driver.findElement(By.id("state")));
+       stateSelect.selectByVisibleText("district of Columbia");
+
+        java.lang.String selected = stateSelect.getFirstSelectedOption().getText();
+
+                if(selected.equals("District of Columbia")){
+                    System.out.println("Test passed");
+
+                }else{
+                    System.out.println("test failed ");
+                }
 
 
+        BrowserUtils.wait(3);
         driver.quit();
 
     }

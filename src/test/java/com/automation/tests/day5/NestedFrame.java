@@ -1,7 +1,7 @@
 package com.automation.tests.day5;
 
 import com.automation.utilities.BrowserUtils;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,9 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class NestedFrame {
 
     public static void main(String[] args) throws Exception {
-        WebDriverManager.chromedriver().version("79").setup();
-       WebDriver driver;
-        driver = new ChromeDriver();
+        WebDriver driver = DriverFactory.createDriver("Chrome");
         driver.get("http://practice.cybertekschool.com/nested_frames");
         BrowserUtils.wait(4);
         driver.switchTo().frame("frame-top");//parent frame
