@@ -28,6 +28,7 @@ import org.testng.annotations.Test;
  */
 public class PracticeTests {
     private WebDriver driver;
+
     /**
      * We put @Test annotation to make methods executable as tests
      */
@@ -44,7 +45,23 @@ public class PracticeTests {
         //if assertion fails - it will throw exception and message will be printed
         //3 parameters: (expected, actual, "message in case of error")
         Assert.assertEquals(actual, expected, "Sub-header message is not matching!");
+
+
+
+
+
     }
+
+
+
+
+
+
+        
+
+
+
+
     @BeforeMethod
     public void setup(){
         WebDriverManager.chromedriver().version("79").setup();
